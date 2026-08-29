@@ -1,0 +1,57 @@
+/* De esta manera se genera el comentario*/
+/*
+selector{
+    propiedad: valor;
+    propiedad: valor;
+    propiedad: valor;
+}
+*/
+
+*{ /*-- margen y "relleno" de las cada una de las partes */
+    margin: 0;
+    padding: 0;
+}
+
+body{ /* Se puede seleccionar en forma general cambiar todo el body  (menos especifico)*/
+    background-color: beige;
+}
+
+.fondo-rojo{ /* Se crea una clase y aplica a lo que nosotros quisieramos (intermedio especifico)*/
+    background-color: red;
+}
+
+#boton-importante{ /* Con el # y el id selecciono una parte especifica (mas especifico)*/
+    background-color: chartreuse;
+}
+
+body h2{ /* Puedo ir aclarando que parte quiero modificar, en este caso el h2 del body */
+    background-color: blue;
+}
+
+body header div .fondo-rojo{ /* Algo mucho mas especifico, tanto con etiquetas y class*/
+    background-color: darkmagenta;
+}
+
+
+#actividades{ /* Algunos atributos: */
+    color: #2B91BA;
+    text-decoration: black underline;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+header{
+    background-color: white;
+    width: 195px;
+}
+
+header img{
+    width: 195px;
+    height: 150px;
+}
+
+#titulo{
+    text-align: center;
+}
