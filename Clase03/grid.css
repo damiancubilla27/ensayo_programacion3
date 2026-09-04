@@ -1,40 +1,62 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+    margin: 0;   /* Elimina los márgenes externos predeterminados del navegador */
+    padding: 0;  /* Elimina los rellenos internos predeterminados */
 }
 
-body{
-    display: grid;
-    grid-template-rows: 200px 100px 500px 300px 50px;
-    grid-template-columns: 70% 30%;
+/* CONTENEDOR PRINCIPAL (ESTRUCTURA DE RETÍCULA) */
+body {
+    display: grid; 
+    /* Define 5 filas fijas de alto: 200px, 100px, 500px, 300px y 50px */
+    grid-template-rows: 200px 100px 500px 300px 50px; 
+    
+    /* Divide la pantalla en 2 columnas: 70% a la izquierda y 30% a la derecha */
+    grid-template-columns: 70% 30%; 
+    
+    font-size: 16px; /* Establece el tamaño de letra base para todo el documento */
+    height: 100dvh;  /* Ocupa el 100% de la altura de la pantalla (Dynamic Viewport Height) */
 }
 
-header{
-    background-color: blue;
-    grid-row: 1;
-    grid-column: 1/3;
+/* CABECERA */
+header {
+    background-color: blue; /* Fondo azul */
+    grid-row: 1;            /* Se ubica en la primera fila */
+    grid-column: 1/3;       /* Se extiende desde la columna 1 hasta la 3 (abarca todo el ancho) */
 }
 
-nav{
-    background-color: bisque;
-    grid-row: 2;
-    grid-column: 1/2;
+/* NAVEGACIÓN PRINCIPAL */
+nav {
+    background-color: bisque; /* Fondo color biscocho/crema */
+    grid-row: 2;               /* Se ubica en la segunda fila */
+    grid-column: 1/2;          /* Ocupa la primera columna (el 70% del ancho) */
+    font-size: 1em;            /* Equivale al tamaño base (16px) */
 }
 
-main{
-    background-color: darkolivegreen;
-    grid-row: 3;
-    grid-column: 1;
+/* CONTENIDO PRINCIPAL */
+main {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuNBryqT_0_LRQCANOKd0JztSHxIPL5ihA5N-lyJlTXw&s=10");
+    grid-row: 3;             /* Se ubica en la tercera fila */
+    grid-column: 1;          /* Ocupa la primera columna */
+    background-size: 10%;    /* La imagen de fondo se ajusta al 10% de su tamaño */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    
+    /* Posicionamiento relativo: desplaza el elemento respecto a su posición original en el Grid */
+    position: relative;
+    top: 150px;              /* Lo desplaza 150px hacia abajo */
+    left: 40%;               /* Lo desplaza un 40% hacia la derecha */
 }
 
-aside{
-    background-color: turquoise;
-    grid-row: 2/5;
-    grid-column: 2;
+/* BARRA LATERAL */
+aside {
+    background-color: turquoise; /* Fondo turquesa */
+    grid-row: 2/5;               /* Abarca verticalmente desde la fila 2 hasta la 5 */
+    grid-column: 2;              /* Se ubica en la segunda columna (el 30% del ancho) */
+    font-size: 2em;              /* Tamaño de letra del doble de la base (32px) */
 }
 
-footer{
-    background-color: violet;
-    grid-row: 4;
-    grid-column: 1;
+/* PIE DE PÁGINA */
+footer {
+    background-color: violet; /* Fondo violeta */
+    grid-row: 4;              /* Se ubica en la cuarta fila */
+    grid-column: 1;           /* Ocupa la primera columna */
+    font-size: 4em;           /* Tamaño de letra 4 veces superior a la base (64px) */
 }
