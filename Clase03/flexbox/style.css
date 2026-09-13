@@ -1,0 +1,40 @@
+body{
+    background: rgba(9, 80, 65, 0.863);
+    margin: 0;
+    height: 100%;
+}
+
+.contenedor{
+    background-color: aqua;
+    width: 1200px;
+    height: 800px;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.arriba{
+    background-color: rgb(179, 255, 0);
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contenido{
+    background-color: burlywood;
+    height: 100px;
+    width: 200px;
+    border: 1px solid;
+    
+}
+
+.supercontenedor{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
