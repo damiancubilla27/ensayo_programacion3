@@ -1,0 +1,38 @@
+body {
+    margin: 0; /* Elimina los márgenes predeterminados que el navegador aplica a toda la página */
+    font-family: sans-serif; /* Define una tipografía moderna, limpia y sin remates para el texto */
+    background-color: #f8f9fa; /* Coloca un fondo gris muy claro para que las tarjetas resalten */
+    padding: 40px; /* Agrega un espacio de relleno alrededor de todo el contenido de la página */
+}
+
+.blog-grid {
+    display: grid; /* Activa el modelo CSS Grid para organizar las tarjetas en una cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* Crea exactamente 3 columnas del mismo tamaño (1 fracción cada una) */
+    gap: 20px; /* Establece una separación de 20 píxeles tanto entre columnas como entre filas */
+}
+
+.card {
+    display: flex; /* Activa Flexbox para organizar los elementos internos de la tarjeta */
+    flex-direction: column; /* Coloca los elementos hijos uno debajo del otro en orden vertical */
+    background: white; /* Pone un fondo blanco para distinguir la tarjeta del fondo general */
+    border-radius: 8px; /* Redondea las esquinas de la tarjeta */
+    overflow: hidden; /* Oculta cualquier contenido que se salga de los bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Agrega una sombra sutil y elegante alrededor de la tarjeta */
+}
+
+.card-image {
+    height: 150px; /* Define una altura fija de 150 píxeles para el espacio de la imagen */
+}
+
+.card-content {
+    padding: 20px; /* Agrega espacio de relleno interno para que el texto no toque los bordes */
+    flex-grow: 1; /* Permite que esta sección crezca y ocupe el espacio sobrante, empujando el footer hacia abajo */
+}
+
+.card-footer {
+    display: flex; /* Activa Flexbox para alinear la fecha y el enlace del pie de tarjeta */
+    flex-direction: row; /* Coloca los elementos en una misma línea horizontal (de izquierda a derecha) */
+    justify-content: space-between; /* Empuja la fecha hacia la izquierda y el enlace hacia la derecha */
+    padding: 15px 20px; /* Agrega un espacio interno superior/inferior de 15px y lateral de 20px */
+    border-top: 1px solid #eee; /* Dibuja una línea divisoria sutil en la parte superior del pie */
+}

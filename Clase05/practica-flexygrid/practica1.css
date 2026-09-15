@@ -1,0 +1,54 @@
+body {
+    margin: 0; /* Elimina el margen por defecto que los navegadores agregan al rededor de la página */
+    font-family: sans-serif; /* Define una tipografía limpia y moderna sin remates */
+    background-color: #f0f2f5; /* Pone un color de fondo gris claro para que resalte la tarjeta */
+    display: flex; /* Convierte al body en un contenedor flexbox para centrar todo fácilmente */
+    justify-content: center; /* Centra los elementos hijos (la tarjeta) horizontalmente */
+    align-items: center; /* Centra los elementos hijos verticalmente en la pantalla */
+    height: 100vh; /* Hace que el body ocupe el 100% de la altura de la ventana del navegador */
+}
+
+.dashboard-card {
+    background: white; /* Da un fondo blanco para que destaque sobre el gris del body */
+    padding: 20px; /* Agrega espacio de relleno interno en los cuatro costados */
+    border-radius: 8px; /* Redondea las esquinas de la tarjeta */
+    width: 350px; /* Establece un ancho fijo para la tarjeta */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Agrega una sombra suave y sutil alrededor */
+    display: grid; /* Activa CSS Grid para organizar las secciones principales de la tarjeta */
+    grid-template-rows: auto auto auto; /* Define 3 filas que se ajustan automáticamente al tamaño de su contenido */
+    row-gap: 20px; /* Inserta una separación vertical de 20px entre cada una de las filas */
+}
+
+.card-header {
+    display: flex; /* Activa Flexbox para acomodar el título y el badge en una misma línea */
+    justify-content: space-between; /* Empuja el título hacia la izquierda y el badge hacia la derecha */
+    align-items: center; /* Alinea ambos elementos al centro de manera vertical */
+}
+
+.card-body {
+    display: grid; /* Activa CSS Grid para organizar las estadísticas */
+    grid-template-columns: 1fr 1fr; /* Divide el espacio en dos columnas de igual tamaño (50% y 50%) */
+    gap: 15px; /* Agrega una separación de 15px entre las columnas y filas internas */
+}
+
+.stat-item {
+    display: flex; /* Activa Flexbox para ordenar el texto de la estadística */
+    flex-direction: column; /* Coloca los elementos hijos (etiqueta y valor) uno debajo del otro en columna */
+}
+
+.stat-item .label {
+    font-size: 0.85rem; /* Reduce un poco el tamaño de la fuente para que sea un texto secundario */
+    color: #666; /* Usa un color gris medio para que no robe tanto protagonismo */
+}
+
+.stat-item .value {
+    font-size: 1.25rem; /* Aumenta el tamaño del número para que destaque más */
+    font-weight: bold; /* Pone el texto en negrita */
+    color: #333; /* Usa un color gris oscuro/negro para buena legibilidad */
+}
+
+.card-footer {
+    display: flex; /* Activa Flexbox para alinear el botón y el enlace */
+    justify-content: space-between; /* Pone el botón a la izquierda y el enlace a la derecha del todo */
+    align-items: center; /* Centra verticalmente el botón y el texto del enlace */
+}
