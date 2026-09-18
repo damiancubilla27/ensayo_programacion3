@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+}
+
+/*--------------------- Contenedor General ---------------------*/
+.contenedor{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+/*--------------------- Formulario de Datos ---------------------*/
+.form-datos{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+}
+
+.filtro-datos{
+    display: flex;
+    flex-direction: row;
+}
+
+.edad-datos{
+    display: flex;
+    flex-direction: row;
+}
+
+.checkbox-datos {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre el cuadro y el texto */
+  margin-right: 2px; /* Espacio opcional entre cada bloque de label */
+}
+
+/*--------------------- Formulario ABM ---------------------*/
+.formulario-ABM{
+    display: flex;
+    flex-direction: column;
+}
+
