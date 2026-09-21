@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,116 +8,79 @@
 </head>
 <body>
     <div class="contenedor">
-        <div class="form-datos">
+        <div id="formDatos" class="form-datos">
             <h3>Form Datos</h3>
             <div class="filtro-datos">
                 <h4>Filtrar por: </h4>
-                <select name="filtro" id=""></select>
+                <select name="filtro" id="selectFiltro">
+                    <option value="Todos">Todos</option>
+                    <option value="Futbolistas">Futbolistas</option>
+                    <option value="Profesionales">Profesionales</option>
+                </select>
             </div>
             <div class="edad-datos">
                 <h4>Calcular edad promedio:</h4>
-                <input type="text">
-                <button>Calcular</button>
+                <input type="text" id="txtPromedio" readonly>
+                <button id="btnCalcular">Calcular</button>
             </div>
             <h4>Mostrar columnas:</h4>
-            <div class="tilde-datos">
-                <label class="checkbox-datos">
-                    <input type="checkbox">
-                    <span>ID</span>
-                </label>
-                <label class="checkbox-datos">
-                    <input type="checkbox">
-                    <span>Nombre</span>
-                </label>
-                <label class="checkbox-datos">
-                    <input type="checkbox">
-                    <span>Apellido</span>
-                </label>
-                <label class="checkbox-datos">
-                    <input type="checkbox">
-                    <span>Edad</span>
-                </label>
-                <label class="checkbox-datos">
-                    <input type="checkbox">
-                    <span>Equipo</span>
-                </label>
-                <label class="checkbox-datos">
-                    <input type="checkbox">
-                    <span>Posicion</span>
-                </label>
-                <label class="checkbox-datos">
-                    <input type="checkbox">
-                    <span>CantGoles</span>
-                </label>
-                <label class="checkbox-datos">
-                    <input type="checkbox">
-                    <span>Titulo</span>
-                </label>
-                <label class="checkbox-datos">
-                    <input type="checkbox">
-                    <span>Facultad</span>
-                </label>
-                <label class="checkbox-datos">
-                    <input type="checkbox">
-                    <span>AñoGrad</span>
-                </label>
+            <div id="columnCheckboxes">
+                <label class="checkbox-datos"><input type="checkbox" value="id" checked><span>ID</span></label>
+                <label class="checkbox-datos"><input type="checkbox" value="nombre" checked><span>Nombre</span></label>
+                <label class="checkbox-datos"><input type="checkbox" value="apellido" checked><span>Apellido</span></label>
+                <label class="checkbox-datos"><input type="checkbox" value="edad" checked><span>Edad</span></label>
+                <label class="checkbox-datos"><input type="checkbox" value="equipo" checked><span>Equipo</span></label>
+                <label class="checkbox-datos"><input type="checkbox" value="posicion" checked><span>Posicion</span></label>
+                <label class="checkbox-datos"><input type="checkbox" value="cantGoles" checked><span>CantGoles</span></label>
+                <label class="checkbox-datos"><input type="checkbox" value="titulo" checked><span>Titulo</span></label>
+                <label class="checkbox-datos"><input type="checkbox" value="facultad" checked><span>Facultad</span></label>
+                <label class="checkbox-datos"><input type="checkbox" value="anioGrad" checked><span>AñoGrad</span></label>
             </div>
+            <table class="tabla-datos">
+                <thead class="contenidoTabla-datos">
+                    <tr>
+                        <th>ID</th><th>Nombre</th><th>Apellido</th><th>Edad</th>
+                        <th>Equipo</th><th>Posicion</th><th>CantGoles</th>
+                        <th>Titulo</th><th>Facultad</th><th>AñoGradu</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaBody">
+                    <!-- Los datos se cargaran dinamicamente -->
+                </tbody>
+            </table>
+            <button id="btnAgregar" class="boton-datos">Agregar</button>
         </div>
-        <div class="formulario-ABM">
+
+        <!-- FORMULARIO ABM -->
+        <div id="formABM" class="formulario-ABM" style="display: block">
             <h3>Formulario ABM</h3>
             <div>
-                <div class="">
-                    <h4>ID:</h4>
-                    <input type="text">
-                </div>
-                <div class="">
-                    <h4>Nombre:</h4>
-                    <input type="text">
-                </div>
-                <div class="">
-                    <h4>Apellido:</h4>
-                    <input type="text">
-                </div>
-                <div class="">
-                    <h4>Edad:</h4>
-                    <input type="text">
-                </div>
-                <div class="">
+                <div class="form-ABM"><h4>ID:</h4><input type="text" id="abmId" readonly></div>
+                <div class="form-ABM"><h4>Nombre:</h4><input type="text" id="abmNombre"></div>
+                <div class="form-ABM"><h4>Apellido:</h4><input type="text" id="abmApellido"></div>
+                <div class="form-ABM"><h4>Edad:</h4><input type="number" id="abmEdad"></div>
+                <div class="form-ABM">
                     <h4>Tipo:</h4>
-                    <select name="" id=""></select>
+                    <select id="abmTipo">
+                        <option value="Futbolista">Futbolista</option>
+                        <option value="Profesional">Profesional</option>
+                    </select>
                 </div>
-                <div class="">
-                    <h4>Equipo:</h4>
-                    <input type="text">
-                </div>
-                <div class="">
-                    <h4>Posicion:</h4>
-                    <input type="text">
-                </div>
-                <div class="">
-                    <h4>CantGoles:</h4>
-                    <input type="text">
-                </div>
-                <div class="">
-                    <h4>Titulo:</h4>
-                    <input type="text">
-                </div>
-                <div class="">
-                    <h4>Facultad:</h4>
-                    <input type="text">
-                </div>
-                <div class="">
-                    <h4>AñoGrad:</h4>
-                    <input type="text">
-                </div>
+                <div class="form-ABM" id="divEquipo"><h4>Equipo:</h4><input type="text" id="abmEquipo">*</div>
+                <div class="form-ABM" id="divPosicion"><h4>Posicion:</h4><input type="text" id="abmPosicion">*</div>
+                <div class="form-ABM" id="divCantGoles"><h4>CantGoles:</h4><input type="number" id="abmCantGoles">*</div>
+                <div class="form-ABM" id="divTitulo" style="display: none;"><h4>Titulo:</h4><input type="text" id="abmTitulo">*</div>
+                <div class="form-ABM" id="divFacultad" style="display: none;"><h4>Facultad:</h4><input type="text" id="abmFacultad">*</div>
+                <div class="form-ABM" id="divAnioGrad" style="display: none;"><h4>AñoGrad:</h4><input type="number" id="abmAnioGrad">*</div>
             </div>
             <div>
-                <button>Alta</button>
-                <button>Modificar</button>
-                <button>Eliminar</button>
-                <button>Cancelar</button>
+                <button id="btnAlta" class="botones-ABM">Alta</button>
+                <button id="btnModificar" class="botones-ABM">Modificar</button>
+                <button id="btnEliminar" class="botones-ABM">Eliminar</button>
+                <button id="btnCancelar" class="botones-ABM">Cancelar</button>
             </div>
         </div>
     </div>
+    <script src="Persona.js"></script>
 </body>
 </html>

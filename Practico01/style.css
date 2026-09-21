@@ -1,28 +1,42 @@
-body{
+*{
     margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f4f6f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*--------------------- Contenedor General ---------------------*/
-.contenedor{
+.contenedor {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto; 
+    gap: 20px; 
+    padding: 30px;
+    max-width: 1200px; 
+    margin: 0 auto;
 }
-
 /*--------------------- Formulario de Datos ---------------------*/
 .form-datos{
     display: flex;
     flex-direction: column;
-    border: 1px solid;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 24px;
 }
 
 .filtro-datos{
     display: flex;
     flex-direction: row;
+    gap: 20px;
 }
 
 .edad-datos{
     display: flex;
     flex-direction: row;
+    gap: 10px;
 }
 
 .checkbox-datos {
@@ -32,9 +46,48 @@ body{
   margin-right: 2px; /* Espacio opcional entre cada bloque de label */
 }
 
+.tabla-datos{
+    width: 100%;
+    border-collapse: collapse; /* Evita bordes dobles */
+    border: 2px solid black;
+}
+
+.contenidoTabla-datos{
+    border: 1px solid black;   /* Borde gris claro */
+    padding: 12px;            /* Espacio interno en las celdas */
+    text-align: left;         /* Alineación del texto */
+}
+
+th {
+  background-color: #f2f2f2; /* Color de fondo para el encabezado */
+  color: #333;
+}
+
+.boton-datos{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
 /*--------------------- Formulario ABM ---------------------*/
 .formulario-ABM{
     display: flex;
     flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 24px;
 }
 
+.form-ABM{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.botones-ABM{
+    cursor: pointer;
+    gap: 10px;
+}
