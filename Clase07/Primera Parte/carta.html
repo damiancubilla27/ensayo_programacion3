@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Carta</label>
+    <input id="txt_carta" type="text">
+    <button id="btn_buscar">Buscar</button>
+    <br>
+    <img id="img_carta" alt="Imagen">
+    <script>
+        function $(id){return document.getElementById(id)}; 
+        // Función abreviada para buscar un elemento por su ID
+
+        function buscar(){ 
+            // Función que realizará la búsqueda
+
+            let urlBase = "https://api.scryfall.com/cards/named?fuzzy="; 
+            // URL base de la API
+
+            urlBase = urlBase + $("txt_carta").value; 
+            // Agrega a la URL el nombre escrito en el input
+
+            var xhttp = new XMLHttpRequest(); 
+            // Crea el objeto para realizar la solicitud HTTP
+
+            xhttp.onreadystatechange = function() { 
+                // Función que se ejecuta cuando cambia el estado de la solicitud
+
+                if (xhttp.readyState == 4) { 
+                    // Verifica que la respuesta esté completa
+
+                    if(xhttp.status == 200){ 
+                        // Verifica que la solicitud haya sido exitosa
+
+                        let respuesta = xhttp.response; 
+                        // Obtiene la respuesta enviada por la API
+
+                        let objetoRespuesta = JSON.parse(respuesta); 
+                        // Convierte el JSON recibido en un objeto JavaScript
+
+                        $("img_carta").setAttribute("src", objetoRespuesta.image_uris.normal); 
+                        // Cambia el src de la imagen por la URL de la carta
+
+                    }else{ 
+                        // Si la solicitud no fue exitosa
+
+                        alert("Carta no encontrada"); 
+                        // Muestra un mensaje de error
+                    }
+                    
+                }
+            }; 
+            // Finaliza la función que controla los cambios de estado
+
+            xhttp.open("GET", urlBase, true); 
+            // Configura la solicitud: método GET, URL y modo asíncrono
+
+            xhttp.send(); 
+            // Envía la solicitud a la API
+        }
+
+        // Busca el botón y le asigna la función buscar al evento click
+        $("btn_buscar").addEventListener("click", buscar);
+
+    </script>
+</body>
+</html>
