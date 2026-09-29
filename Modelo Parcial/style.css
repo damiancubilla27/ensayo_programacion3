@@ -25,6 +25,34 @@
     justify-content: center;  
 }
 
+#cartas{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.carta {
+    width: 100%;
+    max-width: 70px; /* Puedes ajustar este valor si las quieres más grandes o más chicas */
+    margin: 0 auto;   /* Centra la carta dentro de su celda de la grilla */
+    text-align: center;
+}
+
+/* Hacemos que la imagen de la carta se ajuste al ancho de su contenedor manteniendo su proporción */
+.carta img, 
+.carta-imagen {
+    width: 100%;
+    height: auto;     /* Evita que la imagen se deforme */
+    border-radius: 8px; /* Opcional: le da un toque redondeado muy lindo a las esquinas */
+}
+
+/* Opcional: achicamos un poco el texto de abajo para que acompañe el tamaño */
+.carta-codigo, 
+.carta-detalle {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+}
+
 @media (max-width: 900px) {
     .m-2{
     display: grid;
@@ -75,4 +103,10 @@
         grid-row: 3;  
         justify-content: center;  
     }
+
+    #cartas{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 10px;
+}
 }
