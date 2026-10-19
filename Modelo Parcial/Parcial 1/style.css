@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif; /* Define la tipografía principal como Arial y una alternativa sans-serif genérica */
+    margin: 0;                      /* Elimina los márgenes predeterminados de la página web */
+    background-color: #e7b4b4;      /* Establece un color de fondo rosado/pastel suave para la página */
+}
+
+.m-2 {
+    display: grid;                  /* Activa el diseño de cuadrícula (CSS Grid) para este contenedor */
+    grid-template-columns: 1fr 1fr; /* Divide el contenedor en dos columnas iguales (cada una ocupa una fracción del espacio) */
+    grid-template-rows: auto 1fr;   /* Define dos filas: la primera se adapta al contenido (auto) y la segunda ocupa el resto (1fr) */
+}
+
+header {
+    display: grid;                  /* Convierte la cabecera en un contenedor de cuadrícula */
+    grid-column: 1 / 3;             /* Hace que la cabecera ocupe desde la columna 1 hasta la 3 (es decir, abarca todo el ancho de las dos columnas) */
+    justify-items: center;          /* Centra horizontalmente los elementos hijos dentro de la celda de la cuadrícula */
+    margin-bottom: 10px;            /* Agrega un margen inferior de 10 píxeles para separarlo del contenido siguiente */
+}
+
+#panel-izquierda {
+    display: grid;                  /* Convierte este panel en un contenedor de cuadrícula */
+    grid-column: 1;                 /* Posiciona el panel en la primera columna */
+    grid-row: 2;                    /* Posiciona el panel en la segunda fila */
+    justify-content: start;         /* Alinea el contenido interno hacia el inicio (izquierda) del contenedor */
+    grid-template-rows: auto 1fr;   /* Define dos filas internas: la primera automática y la segunda flexible */
+}
+
+#principal {
+    display: grid;                  /* Convierte este elemento en un contenedor de cuadrícula */
+    grid-column: 2;                 /* Posiciona el elemento en la segunda columna */
+    grid-row: 2;                    /* Posiciona el elemento en la segunda fila */
+    justify-content: center;        /* Centra horizontalmente el contenido dentro de su celda */
+}
+
+#series {
+    display: grid;                  /* Convierte el contenedor de series en una cuadrícula */
+    grid-template-columns: repeat(4, 1fr); /* Crea automáticamente 4 columnas de igual tamaño (1 fracción cada una) */
+    gap: 10px;                      /* Establece un espacio (separación) de 10 píxeles entre los elementos de la cuadrícula */
+}
+
+.serie {
+    background-color: white;        /* Define un fondo blanco para cada tarjeta de serie */
+    border: 1px solid #beb0b0;      /* Añade un borde sutil de 1 píxel y color grisáceo */
+    border-radius: 8px;             /* Redondea las esquinas de la tarjeta con un radio de 8 píxeles */
+    padding: 10px;                  /* Añade un espaciado interno de 10 píxeles alrededor del contenido */
+    text-align: center;             /* Centra todo el texto dentro de la tarjeta */
+}
+
+.serie img {
+    width: 100%;                    /* Hace que la imagen ocupe el 100% del ancho disponible en su contenedor */
+    max-width: 60px;                /* Limita el ancho máximo de la imagen a 60 píxeles */
+    height: auto;                   /* Mantiene la proporción original de la altura de la imagen */
+    border-radius: 5px;             /* Redondea las esquinas de la imagen con un radio de 5 píxeles */
+}
+
+.serie p {
+    margin: 5px 0;                  /* Aplica un margen vertical de 5 píxeles arriba y abajo, y 0 a los lados */
+}
+
+.serie button {
+    margin-top: 8px;                /* Añade un margen superior de 8 píxeles para separarlo del texto */
+    padding: 5px 12px;              /* Añade relleno interno (5px arriba/abajo, 12px a los lados) */
+    border: none;                   /* Elimina los bordes predeterminados del botón */
+    border-radius: 5px;             /* Redondea las esquinas del botón con un radio de 5 píxeles */
+    cursor: pointer;                /* Cambia el cursor del mouse a una mano al pasar por encima */
+}
+
+@media (max-width: 900px) {
+    .m-2 {
+        grid-template-columns: 1fr 1fr; /* Mantiene la estructura de dos columnas */
+        grid-template-rows: auto 1fr;   /* Mantiene la estructura de dos filas */
+    }
+
+    header {
+        grid-column: 1 / 3;             /* Mantiene la cabecera abarcando ambas columnas */
+        justify-items: center;          /* Mantiene la cabecera centrada */
+    }
+
+    #panel-izquierda {
+        grid-column: 1;                 /* Mantiene el panel en la columna 1 */
+        grid-row: 2;                    /* Mantiene el panel en la fila 2 */
+        justify-content: start;         /* Alinea el contenido a la izquierda */
+    }
+
+    #principal {
+        grid-column: 2;                 /* Mantiene el contenido principal en la columna 2 */
+        grid-row: 2;                    /* Mantiene el contenido principal en la fila 2 */
+        justify-content: center;        /* Centra el contenido */
+    }
+
+    #series {
+        grid-template-columns: repeat(2, 1fr); /* Cambia la grilla de series a solo 2 columnas */
+        gap: 10px;                      /* Mantiene el espacio de 10px entre elementos */
+        width: 100%;                    /* Ocupa el 100% del ancho disponible */
+        margin: 0 auto;                 /* Centra el contenedor horizontalmente */
+        text-align: center;             /* Centra el texto */
+    }
+
+    .serie img {
+        max-width: 150px;               /* Aumenta el tamaño máximo de la imagen a 150px para tablets o pantallas medianas */
+    }
+}
+
+@media (max-width: 550px) {
+    .m-2 {
+        grid-template-columns: 1fr;     /* Cambia el diseño general a una sola columna (apilado vertical) */
+        grid-template-rows: auto auto auto; /* Define 3 filas automáticas independientes */
+    }
+
+    header {
+        grid-column: 1;                 /* La cabecera ocupa únicamente la columna 1 */
+        grid-row: 1;                    /* Se ubica en la primera fila */
+    }
+
+    #panel-izquierda {
+        grid-column: 1;                 /* El panel izquierdo se ubica en la única columna */
+        grid-row: 2;                    /* Se desplaza a la segunda fila */
+        justify-content: center;        /* Centra el contenido horizontalmente */
+    }
+
+    #principal {
+        grid-column: 1;                 /* El contenido principal se ubica en la única columna */
+        grid-row: 3;                    /* Se desplaza a la tercera fila */
+        justify-content: center;        /* Centra el contenido */
+    }
+
+    #series {
+        grid-template-columns: 1fr;     /* Las series se muestran en una sola columna vertical */
+        gap: 10px;                      /* Mantiene la separación de 10px */
+    }
+
+    .serie img {
+        max-width: 180px;               /* Amplía aún más el ancho máximo de la imagen a 180px para celulares pequeños */
+    }
+}
