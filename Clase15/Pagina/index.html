@@ -7,6 +7,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>Lista de Alumnos</h1>
+    <table border>
+        <thead>
+            <tr>
+                <th>Legajo</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script type="module">
+        const tabla = document.getElementsByTagName("tbody")[0];
+        
+        fetch("http://localhost:3003/alumnos", {
+            method: "GET"
+        })
+        .then((res) => res.json())
+        .then(data => {
+            for(const alumno of data){
+                const fila = document.createElement("tr");
+                fila.innerHTML =`<td>${alumno?.legajo}</td><td>${alumno?.nombre}</td><td>${alumno?.edad}</td>`;
+                tabla.appendChild(fila);
+            }
+        })
+
+        /*
+        const request = async () => {
+            try{
+                const respuesta = await fetch("http://localhost:3003/alumnos", {
+                method: "GET"
+                })
+                if(!respuesta.ok){
+                    throw new Error(`Eror en la peticion: ${respuesta.status}`);
+                }
+                const data = respuesta.json();
+                return data;
+            }catch(error){
+                console.error(error);
+            }
+        }
+        
+        const alumnos = await request();
+        for(const alumno of alumnos){
+            const fila = document.createElement("tr");
+            fila.innerHTML =`<td>${alumno?.legajo}</td><td>${alumno?.nombre}</td><td>${alumno?.edad}</td>`;
+            tabla.appendChild(fila);
+        }
+        */
+    </script>
 </body>
 </html>
