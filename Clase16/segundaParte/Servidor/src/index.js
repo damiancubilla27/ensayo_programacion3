@@ -1,5 +1,6 @@
 import express from "express"
 import cors from "cors"
+import {connection} from "./config.js"
 
 const app = express();
 
@@ -61,6 +62,16 @@ app.get("/profesores/:id/pruebas", (req, res) => {
     console.log(id);
     res.end();
 })
+
+try {
+  const results = await connection.query(
+    'SELECT * FROM `alumnos` WHERE 1'
+  );
+
+  console.log(results); // results contains rows returned by server
+} catch (err) {
+  console.log(err);
+}
 
 app.listen( puerto, ()=>{
     console.log("Esta ejecutandose en el puerto 3003");
